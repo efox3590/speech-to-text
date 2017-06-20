@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Speech Sample</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Give+You+Glory" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main2.css" />
+    <noscript>
+        <link rel="stylesheet" href="styles/noscript.css" />
+    </noscript>
+
+</head>
+
+<body class="is-loading">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <section id="main">
+
+            <table>
+                <tr>
+                    <td></td>
+                    <td>
+                        <h1 style="font-weight:500;">Speech Recognition App</h1>
+                        <h2> Created by</h2> <h2 class="signature">Emily Fox</h2>
+
+                    </td>
+                </tr>
+                <tr hidden>
+                    <td align="right"><a href="https://www.microsoft.com/cognitive-services/en-us/sign-up" target="_blank">API Key</a>:</td>
+                    <td>
+                        <input id="key" type="text" size="40" value="30e9a987b3a647898460bff8923ea153">
+                    </td>
+                </tr>
+                <tr hidden>
+                    <td align="right">Laguage:</td>
+                    <td align="left">
+                        <select id="languageOptions">
+
+                            <option value="en-US" selected="selected">English - US</option>
+
+                        </select>
+                    </td>
+                </tr>
+                <tr hidden>
+                    <td align="right">Format:</td>
+                    <td align="left">
+                        <select id="formatOptions">
+                            <option value="Simple" selected="selected">Simple Result</option>
+                            <option value="Detailed">Detailed Result</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button id="startBtn" disabled="disabled">Start</button>
+                        <button id="stopBtn" disabled="disabled">Stop</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="padding"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Text: <span id="hypothesisDiv"></span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <textarea id="phraseDiv" style="width:500px;height:200px"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Status: <span id="statusDiv"></span></td>
+                </tr>
+            </table>
+
+        </section>
+
+        <!-- Footer -->
+
+    </div>
+    <!-- Scripts -->
+    <!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+    <script>
+        if ('addEventListener' in window) {
+            window.addEventListener('load', function() {
+                document.body.className = document.body.className.replace(/\bis-loading\b/, '');
+            });
+            document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+        }
+    </script>
+
+    <!-- The SDK has a dependency on requirejs (http://requirejs.org/). -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.3/require.min.js"></script>
+    <script>
+        // Special handling to let the sample work when loaded directly from file system.
+        if (window.location.protocol == "file:") {
+            document.write('\<script src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.3/require.min.js">\<\/script>');
+        }
+    </script>
+
+    <!-- SDK REFERENCE -->
+    <script src="distrib/speech.browser.sdk-min.js"></script>
+
+    <!-- SDK USAGE -->
+    <script src="js/recognize.js"></script>
+
+    <!-- Browser Hooks -->
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
