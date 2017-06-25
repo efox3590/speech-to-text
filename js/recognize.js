@@ -77,6 +77,6 @@ function RecognizerStart(SDK, recognizer) {
 
 // Stop the Recognition.
 function RecognizerStop(SDK, recognizer) {
-    console.log("bitch didn't hear you and you pressed the stop button so I guess it's an error");
+    console.log("ERROR: YOU PRESSED THE STOP BUTTON");
     recognizer.AudioSource.TurnOff();
 }
